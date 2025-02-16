@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="myCanvas" width="1000" height="600" style="border:1px solid black;">
+</canvas>
+
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+
+    ctx.font = "50px Arial";
+    ctx.fillText("Hello World",10,80);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(0, 100, 100, 100);
+
+    const grad=ctx.createLinearGradient(0,0,500,0);
+    grad.addColorStop(0, "lightblue");
+    grad.addColorStop(0.5, "darkblue");
+    grad.addColorStop(1, "black");
+
+    ctx.beginPath();
+    ctx.moveTo(200, 200)
+    ctx.lineTo(300, 300);
+    ctx.lineTo(200, 400);
+    ctx.lineTo(100, 300);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(400, 200)
+    ctx.lineTo(600, 200);
+    ctx.lineTo(700, 300);
+    ctx.lineTo(600, 400);
+    ctx.lineTo(400, 400);
+    ctx.lineTo(300, 300);
+    ctx.lineTo(400, 200);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(800, 200)
+    ctx.lineTo(900, 300);
+    ctx.lineTo(800, 400);
+    ctx.lineTo(700, 300);
+    ctx.lineTo(800, 200);
+    ctx.stroke();
+    ctx.fill();
+
+
+</script>
+
+</html>
